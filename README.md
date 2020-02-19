@@ -9,6 +9,7 @@
 - has_many :group
 - has_many :message
 - has_many :chat
+- has_many :group, through: :group_user
 
 ##  groupテーブル
 |Column|Type|Options|
@@ -18,6 +19,7 @@
 - has_many :user
 - has_many :message
 - has_many :chat
+- has_many :user, through: :group_user
 
 ## group_userテーブル
 |Column|Type|Options|
