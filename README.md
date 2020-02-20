@@ -23,16 +23,16 @@
 |user_id|integer|null: false, foreign_key: true, add_index :groups_users, :user_id|
 |group_id|integer|null: false, foreign_key: true, add_index :groups_users, :group_id|
 ### Association
-- belong_to :users
-- belong_to :groups
+- belong_to :user
+- belong_to :group
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|text|null: false|
+|content|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true, add_index :messages, :user_id|
 |group_id|integer|null: false, foreign_key: true, add_index :messages, :group_id|
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
