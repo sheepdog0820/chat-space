@@ -1,0 +1,13 @@
+.side-bar {
+  background-color: #253141;
+  height: 900px;
+  width: 300px; 
+  float: left;
+ }
+
+ .main-bar {
+   background-color: #ffffff;
+   height: 900px;
+   width: calc(100vw - 300px);
+   float: right;
+ }
