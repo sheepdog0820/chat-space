@@ -1,11 +1,19 @@
 .side-bar {
   width: 300px; 
   float: left;
-  .side-bar_user{
+  .side-bar__user{
     background-color: #253141;
     height: 100px;
+    display: flex;
+    align-items: center;
+    .side-bar__user__top-item{
+      background-color: #333333;
+      margin: 0 auto;
+      height: 20px;
+      width: 220px;
+    }
   }
-  .side-bar_group-list{
+  .side-bar__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
   }
