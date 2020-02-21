@@ -11,6 +11,14 @@
       margin: 0 auto;
       height: 20px;
       width: 220px;
+      display: flex;
+      justify-content: space-between;
+      .side-bar__user__top-item__name{
+        line-height: 20px;
+      }
+      .side-bar__user__top-item__icon{
+        width: 60px;
+      }
     }
   }
   .side-bar__group-list{
