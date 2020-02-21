@@ -1,3 +1,5 @@
+gem 'font-awesome-sass'
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -53,3 +55,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
+
