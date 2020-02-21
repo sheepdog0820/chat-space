@@ -14,11 +14,17 @@
       display: flex;
       justify-content: space-between;
       .side-bar__user__top-item__name{
+        color: #ffffff;
         line-height: 20px;
       }
-      .side-bar__user__top-item__icon{
-        color: blue;
+      .side-bar__user__top-item__menu{
         width: 60px;
+        display: flex;
+        li{
+          a{
+            color: #ffffff;
+          }
+        }
       }
     }
   }
