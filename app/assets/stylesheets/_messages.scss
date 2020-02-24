@@ -1,34 +1,37 @@
 .side-bar {
   width: 300px; 
   float: left;
-  .side-bar__user{
+  &__user{
     background-color: #253141;
+    padding: 0 20px;
     height: 100px;
     display: flex;
     align-items: center;
-    .side-bar__user__top-item{
+    &__top-item{
+      margin-left: 20px;
       background-color: #333333;
-      margin: 0 auto;
       height: 20px;
       width: 220px;
       display: flex;
       justify-content: space-between;
-      .side-bar__user__top-item__name{
+      font-weight: bold;
+      &__name{
         color: #ffffff;
         line-height: 20px;
       }
-      .side-bar__user__top-item__menu{
-        width: 60px;
+      &__menu{
         display: flex;
         li{
           a{
+            list-style: none;
+            padding-left: 5px;
             color: #ffffff;
           }
         }
       }
     }
   }
-  .side-bar__group-list{
+  &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
   }
@@ -37,15 +40,15 @@
  .main-bar {
    width: calc(100vw - 300px);
    float: right;
-   .main-bar__group-name{
+   &__group-name{
     background-color: #ffffff;
     height: 100px;
    }
-   .main-bar__message-list{
+   &__message-list{
      background-color: #fafafa;
      height: calc(100vh - 100px - 90px);
    }
-   .main-bar__message-send{
+   &__message-send{
      background-color: #d2d2d2;
      height: 90px;
 
