@@ -26,5 +26,15 @@
           2020/02/24(Mon) 16:25:47
       .main-bar__messages__message__comment
         今日はいい天気
-  .main-bar__message-send
+  .main-bar__form
+    .main-bar__form__new-message
+      .main-bar__form__new-message__input-box
+        .main-bar__form__new-message__input-box__text
+          type a message
+        .main-bar__form__new-message__input-box__image
+        -# %label{class: "input-box__image"}
+        -#   = icon('fas', 'image')
+        -#     %input{type: "file"}
+      .main-bar__form__new-message__send
+        send
   
