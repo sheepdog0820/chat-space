@@ -30,11 +30,11 @@
     .main-bar__form__new-message
       .main-bar__form__new-message__input-box
         .main-bar__form__new-message__input-box__text
-          type a message
+          %p type a message
         .main-bar__form__new-message__input-box__image
-        -# %label{class: "input-box__image"}
-        -#   = icon('fas', 'image')
-        -#     %input{type: "file"}
-      .main-bar__form__new-message__send
-        send
+          %label{class: "main-bar__form__new-message__input-box__image__label"}
+            = icon('fas', 'image')
+            %input{type: "file",class: "main-bar__form__new-message__input-box__image__input"}
+    .main-bar__form__send
+      send
   
