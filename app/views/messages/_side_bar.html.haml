@@ -5,14 +5,16 @@
         = current_user.name
       %ul.side-bar__user__top-item__menu
         %li.side-bar__user__top-item__edit-bar__user
-          = link_to new_group_path() do
+          = link_to new_group_path do
             = icon('far', 'edit', class: "right-icon")
         %li.side-bar__user_top-item__new-group
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: "right-icon")
   .side-bar__group-list
-    = link_to "#",class:"side-bar__group-list__group" do
-      %p.side-bar__group-list__group__group-name
-        test
-      %p.side-bar__group-list__group__group-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。

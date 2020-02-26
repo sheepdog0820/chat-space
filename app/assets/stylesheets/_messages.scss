@@ -36,16 +36,17 @@ $maincolor: #ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px;
-    &__group{
-      color: $maincolor;
+    .group{
       text-decoration: none;
       margin-bottom: 40px;
-      &__group-name{
+      .group__name{
+        color: $maincolor;
         font-size: 15px;
         font-weight: bold;
         margin-bottom: 5px;
       }
-      &__group-message{
+      .group__message{
+        color: $maincolor;
         font-size: 11px;
         font-weight: bold;
       }
