@@ -2,38 +2,21 @@
   .main-bar__group-list
     .main-bar__group-list__group-status
       %p.main-bar__group-list__group-status__name
-        test
+        =@group.name
       %p.main-bar__group-list__group-status__member
-        Memder:masa
+        - @group.users.each do |user|
+          = user.name
     .main-bar__group-list__group-edit  
-      = link_to "#", class: "main-bar__group-list__group-edit__icon" do
+      = link_to edit_group_path(@group), class: "main-bar__group-list__group-edit__icon" do
         %p
           Edit
   .main-bar__messages
-    .main-bar__messages__message
-      .main-bar__messages__message__list
-        %p.main-bar__messages__message__list__name
-          name
-        %p.main-bar__messages__message__list__time
-          2020/02/24(Mon) 16:25:47
-      .main-bar__messages__message__comment
-        今日はいい天気
-    .main-bar__messages__message
-      .main-bar__messages__message__list
-        %p.main-bar__messages__message__list__name
-          name
-        %p.main-bar__messages__message__list__time
-          2020/02/24(Mon) 16:25:47
-      .main-bar__messages__message__comment
-        今日はいい天気
-  .main-bar__form
-    .main-bar__form__new-message
-      .main-bar__form__new-message__input-box
-        .main-bar__form__new-message__input-box__text
-          %p type a message
-        .main-bar__form__new-message__input-box__image
-          %label{class: "main-bar__form__new-message__input-box__image__label"}
-            = icon('fas', 'image')
-            %input{type: "file",class: "main-bar__form__new-message__input-box__image__input"}
-    .main-bar__form__send
-      send
+    = render @messages
+  .main-bar__message-form
+    = form_for [@group, @message], html: { class: "main-bar__message-form__form"} do |f|
+      = f.text_field :content, class: 'main-bar__message-form__form__text', placeholder: 'type a message'
+      .main-bar__message-form__form__image-box
+        = f.label :image, class: 'main-bar__message-form__form__image-box__label' do
+          = icon('fas', 'image', class: 'main-bar__message-form__form__image-box__icon')
+          = f.file_field :image, class: 'main-bar__message-form__form__image-box__input'
+      = f.submit 'Send', class: 'main-bar__message-form__form__send'
