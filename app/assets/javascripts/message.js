@@ -56,6 +56,7 @@ $('#new_message').on('submit', function(e){
       $(".main-bar__messages").append(html);
       $('.main-bar__messages').animate({ scrollTop: $('.main-bar__messages')[0].scrollHeight});
       $('form')[0].reset();
+      $('.main-bar__message-form__form__send').prop('disabled', false);
     })
   })
 });
