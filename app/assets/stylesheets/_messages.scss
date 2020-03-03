@@ -36,6 +36,7 @@ $maincolor: #ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px;
+    overflow-y: scroll;
     .group{
       text-decoration: none;
       margin-bottom: 40px;
