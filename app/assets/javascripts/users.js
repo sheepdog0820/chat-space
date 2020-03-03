@@ -1,7 +1,5 @@
 $(function(){
 
-  var user_list = $("chat-group-form__field--right");
-
   function addUser(user) {
       let html = `<div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">
@@ -31,7 +29,10 @@ $(function(){
     </div>`;
     $(".js-add-user").append(html);
   }
-
+  function addMenber(userId){
+    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
+    $(`#${userId}`).append(html);
+  }
   $("#user-search-field").on("keyup", function(){
     let input = $("#user-search-field").val();
     $.ajax({
@@ -41,7 +42,7 @@ $(function(){
       dataType: 'json'
     })
     .done(function(users){
-      user_list.empty();
+      $("#user-search-result").empty();
       if ( users.lenght !== 0){
         users.forEach(function(user){
           addUser(user);
@@ -59,7 +60,7 @@ $(function(){
     });
 　})
 
-  $('.chat-group-form__field--right').on('click', '.user-search-add', function(){
+  $('.chat-group-form__field--right').on('click', '.chat-group-user__btn--add', function(){
     console.log("発火");
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
@@ -67,5 +68,11 @@ $(function(){
       .parent()
       .remove();
     addDeleteUser(userName, userId);
-  })
+    addMenber(userId);
+  });
+  $('.chat-group-form__field--right').on('click', '.chat-group-user__btn--remove', function(){
+    $(this)
+      .parent()
+      .remove();
+  });
 });
