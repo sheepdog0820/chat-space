@@ -21,7 +21,9 @@ $(function(){
                   </div>`;
       $("#user-search-result").append(html);
   }
-
+  $('.chat-group-form__field--right').on('click', '.user-search-add', function(){
+    console.log("発火");
+  });
   $("#user-search-field").on("keyup", function(){
     let input = $("#user-search-field").val();
     $.ajax({
