@@ -7,7 +7,7 @@ $(function(){
                     <p class="chat-group-user__name">
                       ${user.name}
                     </p>
-                    <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" ${user.id}="" data-user-name="ユーザー名">
+                    <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">
                       追加
                     </div>
                   </div>`;
@@ -21,9 +21,17 @@ $(function(){
                   </div>`;
       $("#user-search-result").append(html);
   }
-  $('.chat-group-form__field--right').on('click', '.user-search-add', function(){
-    console.log("発火");
-  });
+
+  function addDeleteUser(name, id){
+    let html =`
+    <div class="chat-group-user cleaffix" id="${id}">
+      <p class="caht-group-user__name">${name}</p>
+      <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id="${id}" data-user-name="${name}">削除
+      </div>
+    </div>`;
+    $(".js-add-user").append(html);
+  }
+
   $("#user-search-field").on("keyup", function(){
     let input = $("#user-search-field").val();
     $.ajax({
@@ -50,4 +58,14 @@ $(function(){
       alert("通信エラーです。ユーザーが表示できません。");
     });
 　})
+
+  $('.chat-group-form__field--right').on('click', '.user-search-add', function(){
+    console.log("発火");
+    const userName = $(this).attr("data-user-name");
+    const userId = $(this).attr("data-user-id");
+    $(this)
+      .parent()
+      .remove();
+    addDeleteUser(userName, userId);
+  })
 });
