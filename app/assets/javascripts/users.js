@@ -60,7 +60,6 @@ $(function(){
 　})
 
   $('.chat-group-form__field--right').on('click', '.chat-group-user__btn--add', function(){
-    console.log("発火");
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
