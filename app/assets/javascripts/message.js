@@ -39,7 +39,7 @@ $(function(){
 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id= ${message.id}>
                     <div class="upper-message">
                       <p class="message__upper-info__talker">
                         ${message.user_name}
@@ -54,7 +54,7 @@ $(function(){
                     <img src=${message.image}>
                   </div>`
     } else if (message.content) {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id= ${message.id}>
                     <div class="upper-message">
                       <p class="message__upper-info__talker">
                         ${message.user_name}
@@ -68,7 +68,7 @@ $(function(){
                     </p>
                   </div>`
     } else if (message.image) {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id= ${message.id}>
                     <div class="upper-message">
                       <p class="message__upper-info__talker">
                         ${message.user_name}
