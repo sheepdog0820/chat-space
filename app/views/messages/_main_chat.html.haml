@@ -1,9 +1,10 @@
 .main-bar
   .main-bar__group-list
     .main-bar__group-list__group-status
-      %p.main-bar__group-list__group-status__name
-        =@group.name
-      %p.main-bar__group-list__group-status__member
+      .main-bar__group-list__group-status__name
+        = @group.name
+      .main-bar__group-list__group-status__member
+        Member:
         - @group.users.each do |user|
           = user.name
     .main-bar__group-list__group-edit  
